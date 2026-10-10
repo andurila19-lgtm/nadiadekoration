@@ -1,0 +1,94 @@
+---
+// Header.astro - Navigasi & Banner Pratinjau Konsep
+---
+
+<!-- BAR PRATINJAU KONSEP SITUS (CONCEPT PREVIEW BANNER) -->
+<div class="concept-preview-banner" id="conceptBanner">
+  <div class="concept-preview-content">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span class="concept-badge">Pratinjau Desain</span>
+      <span class="concept-text">
+        Konsep website bisnis resmi untuk <strong>Nadia Dekorasi Madiun</strong> — Pratinjau pengalaman digital calon pengantin & vendor.
+      </span>
+    </div>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <a href="#konsultasi" class="concept-link">Cek Fitur Form WhatsApp &rarr;</a>
+      <button class="banner-close-btn" aria-label="Tutup Banner" title="Tutup Banner">&times;</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAVIGATION HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav-container">
+    <!-- Brand Logo Text -->
+    <a href="#beranda" class="brand-logo" aria-label="Nadia Dekorasi Madiun Beranda">
+      <span class="brand-name">NADIA DEKORASI</span>
+      <span class="brand-sub">WEDDING DECORATION • MADIUN RAYA</span>
+    </a>
+
+    <!-- Desktop Navigation Menu -->
+    <nav aria-label="Navigasi Utama">
+      <ul class="nav-menu">
+        <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+        <li><a href="#tentang" class="nav-link">Tentang Kami</a></li>
+        <li><a href="#paket" class="nav-link">Paket Dekorasi</a></li>
+        <li><a href="#galeri" class="nav-link">Galeri</a></li>
+        <li><a href="#layanan" class="nav-link">Layanan</a></li>
+        <li><a href="#kenapa-kami" class="nav-link">Nilai Kami</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header Action Buttons -->
+    <div class="nav-actions">
+      <a href="https://wa.me/6282330218310?text=Halo%20Nadia%20Dekorasi%20Madiun%2C%20saya%20ingin%20berkonsultasi%20mengenai%20dekorasi%20pernikahan." 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="btn-header-wa"
+         aria-label="Konsultasi via WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.532 1.943.924 3.15.924h.001c3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.586-5.766-5.77-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.782 0-3.46-.469-4.922-1.289l-5.078 1.351 1.375-4.996c-.896-1.508-1.375-3.238-1.375-5.066 0-5.514 4.486-10 10-10s10 4.486 10 10z"/></svg>
+        <span>Konsultasi WhatsApp</span>
+      </a>
+
+      <!-- Mobile Menu Hamburger Button -->
+      <button class="mobile-nav-toggle" aria-label="Buka Menu Navigasi" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav-drawer" id="mobileDrawer">
+  <div class="mobile-drawer-header">
+    <div>
+      <div class="brand-name" style="font-size:1.2rem;">NADIA DEKORASI</div>
+      <div class="brand-sub">MADIUN • PONOROGO • MAGETAN • NGAWI</div>
+    </div>
+    <button class="mobile-drawer-close" aria-label="Tutup Menu">&times;</button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="#beranda" class="mobile-nav-link">Beranda</a></li>
+    <li><a href="#tentang" class="mobile-nav-link">Tentang Kami</a></li>
+    <li><a href="#paket" class="mobile-nav-link">Paket Dekorasi</a></li>
+    <li><a href="#galeri" class="mobile-nav-link">Galeri Portofolio</a></li>
+    <li><a href="#layanan" class="mobile-nav-link">Layanan & Sewa</a></li>
+    <li><a href="#kenapa-kami" class="mobile-nav-link">Nilai & Komitmen</a></li>
+    <li><a href="#konsultasi" class="mobile-nav-link">Cek Tanggal Acara</a></li>
+  </ul>
+  <div class="mobile-drawer-footer">
+    <a href="https://wa.me/6282330218310?text=Halo%20Nadia%20Dekorasi%20Madiun%2C%20saya%20ingin%20konsultasi%20jadwal." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="btn btn-wa" 
+       style="width: 100%;">
+      Hubungi WhatsApp (0823-3021-8310)
+    </a>
+    <p style="font-size:0.75rem; color:var(--text-muted); margin-top:12px; text-align:center;">
+      Instagram: @nadia_dekorasi.madiun
+    </p>
+  </div>
+</div>
+<div class="mobile-drawer-overlay"></div>

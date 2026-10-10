@@ -1,0 +1,82 @@
+---
+// src/pages/tentang.astro - Halaman Tentang Kami
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Intro from '../components/Intro.astro';
+import WhyUs from '../components/WhyUs.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import { businessProfile } from '../data/business';
+import { MapPin, ShieldCheck, HeartHandshake } from 'lucide-astro';
+---
+
+<BaseLayout 
+  title="Tentang Kami | Nadia Dekorasi Madiun"
+  description="Mengenal Nadia Dekorasi Madiun — Vendor dekorasi pernikahan mandiri yang mengutamakan konsep personal, kejujuran rancangan, dan layanan regional di Madiun, Ponorogo, Magetan, dan Ngawi."
+>
+  <Navbar />
+
+  <main id="main-content">
+    <!-- Header Banner Halaman -->
+    <section class="py-14 sm:py-20 bg-olive-950 text-white relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 text-center">
+        <span class="inline-block text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase text-champagne-300 mb-2 sm:mb-3">
+          Mengenal Kami
+        </span>
+        <h1 class="font-serif text-2xl sm:text-5xl font-medium text-white mb-3 sm:mb-4">
+          Tentang Nadia Dekorasi Madiun
+        </h1>
+        <p class="text-xs sm:text-base text-stone-300 max-w-2xl mx-auto font-light leading-relaxed">
+          Dedikasi kami untuk menghadirkan keindahan panggung pelaminan dan tata ruang akad nikah yang syahdu dengan prinsip kejujuran, ketelitian, dan komunikasi personal.
+        </p>
+      </div>
+    </section>
+
+    <!-- Narasi Inti Bisnis -->
+    <Intro />
+
+    <!-- Prinsip & Komitmen Layanan -->
+    <section class="py-14 sm:py-20 bg-ivory-100 border-b border-cream-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
+          <div class="bg-white p-5 sm:p-8 rounded-lg sm:rounded-xs border border-cream-200 shadow-sm">
+            <div class="w-10 h-10 rounded-md sm:rounded-xs bg-champagne-100 text-champagne-600 flex items-center justify-center mb-3 sm:mb-4">
+              <HeartHandshake class="w-5 h-5" />
+            </div>
+            <h3 class="font-serif text-lg sm:text-xl font-semibold text-olive-900 mb-1.5 sm:mb-2">Komunikasi Jujur & Terbuka</h3>
+            <p class="text-xs sm:text-sm text-olive-700 leading-relaxed font-light">
+              Kami mendengarkan referensi visual dan kebutuhan calon pengantin secara tulus. Diskusi konsep dilakukan secara transparan langsung via WhatsApp tanpa perantara berbelit.
+            </p>
+          </div>
+
+          <div class="bg-white p-5 sm:p-8 rounded-lg sm:rounded-xs border border-cream-200 shadow-sm">
+            <div class="w-10 h-10 rounded-md sm:rounded-xs bg-sage-100 text-sage-700 flex items-center justify-center mb-3 sm:mb-4">
+              <ShieldCheck class="w-5 h-5" />
+            </div>
+            <h3 class="font-serif text-lg sm:text-xl font-semibold text-olive-900 mb-1.5 sm:mb-2">Integritas Tanpa Fabrikasi</h3>
+            <p class="text-xs sm:text-sm text-olive-700 leading-relaxed font-light">
+              Kami tidak menggunakan angka pengalaman fiktif, ulasan buatan, atau klaim berlebihan. Kualitas kerja kami dinilai dari kesesuaian penataan dan kepuasan nyata di hari bahagia Anda.
+            </p>
+          </div>
+
+          <div class="bg-white p-5 sm:p-8 rounded-lg sm:rounded-xs border border-cream-200 shadow-sm">
+            <div class="w-10 h-10 rounded-md sm:rounded-xs bg-champagne-100 text-champagne-600 flex items-center justify-center mb-3 sm:mb-4">
+              <MapPin class="w-5 h-5" />
+            </div>
+            <h3 class="font-serif text-lg sm:text-xl font-semibold text-olive-900 mb-1.5 sm:mb-2">Jangkauan Madiun Raya</h3>
+            <p class="text-xs sm:text-sm text-olive-700 leading-relaxed font-light">
+              Berbasis di Madiun dengan jangkauan operasional penuh ke wilayah Kota Madiun, Kabupaten Madiun, Ponorogo, Magetan, hingga Ngawi dengan komitmen ketepatan waktu pemasangan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <WhyUs />
+    <CTA />
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</BaseLayout>

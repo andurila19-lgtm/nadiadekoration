@@ -1,0 +1,80 @@
+---
+// WhyUs.astro - Keunggulan dan Nilai Layanan Nadia Dekorasi tanpa klaim superlatif rekaan
+import { Palette, Home, MapPin, MessageCircle } from 'lucide-astro';
+---
+
+<section class="py-14 sm:py-24 bg-cream-100/60 border-b border-cream-200" id="kenapa-kami">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+      <span class="inline-block text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase text-champagne-600 mb-2">
+        Komitmen & Dedikasi
+      </span>
+      <h2 class="font-serif text-2xl sm:text-4xl font-medium text-olive-900 mb-3 sm:mb-4">
+        Mengapa Memilih Nadia Dekorasi
+      </h2>
+      <p class="text-xs sm:text-base text-olive-700 leading-relaxed font-light">
+        Kami mengedepankan keselarasan desain, fleksibilitas penataan ruang, serta kemudahan komunikasi agar proses persiapan pernikahan Anda berjalan tenang dan terencana.
+      </p>
+      <div class="flex items-center justify-center gap-3 mt-4">
+        <div class="w-10 h-px bg-champagne-300"></div>
+        <div class="w-1.5 h-1.5 rotate-45 bg-champagne-500"></div>
+        <div class="w-10 h-px bg-champagne-300"></div>
+      </div>
+    </div>
+
+    <!-- 4 Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-lg sm:rounded-xs p-5 sm:p-7 border border-cream-200 hover:border-champagne-400 hover:shadow-card transition-all duration-300">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-md sm:rounded-xs bg-champagne-100 text-champagne-600 flex items-center justify-center mb-3.5 sm:mb-5">
+          <Palette class="w-5 h-5" />
+        </div>
+        <h3 class="font-serif text-base sm:text-lg font-semibold text-olive-900 mb-1.5 sm:mb-2">
+          Konsep Personal & Fleksibel
+        </h3>
+        <p class="text-xs sm:text-sm text-olive-700 leading-relaxed font-light">
+          Setiap dekorasi dirancang menyesuaikan tema warna, preferensi bunga, dan karakter pasangan tanpa memaksakan satu pakem template kaku.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-lg sm:rounded-xs p-5 sm:p-7 border border-cream-200 hover:border-champagne-400 hover:shadow-card transition-all duration-300">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-md sm:rounded-xs bg-sage-100 text-sage-700 flex items-center justify-center mb-3.5 sm:mb-5">
+          <Home class="w-5 h-5" />
+        </div>
+        <h3 class="font-serif text-base sm:text-lg font-semibold text-olive-900 mb-1.5 sm:mb-2">
+          Gedung Maupun Rumah
+        </h3>
+        <p class="text-xs sm:text-sm text-olive-700 leading-relaxed font-light">
+          Keahlian menata panggung dengan proporsi pas untuk aula gedung luas maupun keterbatasan teras dan tenda rumah warga agar tetap nyaman dan estetik.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-lg sm:rounded-xs p-5 sm:p-7 border border-cream-200 hover:border-champagne-400 hover:shadow-card transition-all duration-300">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-md sm:rounded-xs bg-champagne-100 text-champagne-600 flex items-center justify-center mb-3.5 sm:mb-5">
+          <MapPin class="w-5 h-5" />
+        </div>
+        <h3 class="font-serif text-base sm:text-lg font-semibold text-olive-900 mb-1.5 sm:mb-2">
+          Layanan Madiun Raya
+        </h3>
+        <p class="text-xs sm:text-sm text-olive-700 leading-relaxed font-light">
+          Armada logistik dan kru dekorasi kami siap melayani seluruh Kota & Kabupaten Madiun, Ponorogo, Magetan, serta Ngawi dengan ketepatan waktu.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-lg sm:rounded-xs p-5 sm:p-7 border border-cream-200 hover:border-champagne-400 hover:shadow-card transition-all duration-300">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-md sm:rounded-xs bg-sage-100 text-sage-700 flex items-center justify-center mb-3.5 sm:mb-5">
+          <MessageCircle class="w-5 h-5" />
+        </div>
+        <h3 class="font-serif text-base sm:text-lg font-semibold text-olive-900 mb-1.5 sm:mb-2">
+          Konsultasi Mudah & Terbuka
+        </h3>
+        <p class="text-xs sm:text-sm text-olive-700 leading-relaxed font-light">
+          Diskusi langsung melalui WhatsApp secara ramah. Calon pengantin dapat berkonsultasi seputar denah dan referensi foto dekorasi dengan nyaman.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

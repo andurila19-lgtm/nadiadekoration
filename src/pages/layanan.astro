@@ -1,0 +1,111 @@
+---
+// src/pages/layanan.astro - Halaman Detail Layanan & Persewaan Perlengkapan
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Services from '../components/Services.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import { servicesData } from '../data/services';
+import { Check, MessageCircle, ArrowRight } from 'lucide-astro';
+---
+
+<BaseLayout 
+  title="Layanan & Persewaan | Nadia Dekorasi Madiun"
+  description="Layanan lengkap dekorasi pelaminan, akad nikah, backdrop lamaran, dekorasi rumah, dan sewa kursi tiffany serta alat pesta di Madiun, Ponorogo, Magetan, dan Ngawi."
+>
+  <Navbar />
+
+  <main id="main-content">
+    <!-- Header Banner Halaman -->
+    <section class="py-14 sm:py-20 bg-olive-950 text-white relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 text-center">
+        <span class="inline-block text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase text-champagne-300 mb-2 sm:mb-3">
+          Solusi Menyeluruh
+        </span>
+        <h1 class="font-serif text-2xl sm:text-5xl font-medium text-white mb-3 sm:mb-4">
+          Layanan Dekorasi & Persewaan Perlengkapan
+        </h1>
+        <p class="text-xs sm:text-base text-stone-300 max-w-2xl mx-auto font-light leading-relaxed">
+          Dari panggung utama pelaminan berdimensi penuh hingga kebutuhan persewaan kursi tiffany dan ornamen pesta, kami menyediakan perlengkapan pernikahan terkoordinasi untuk Madiun Raya.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Component -->
+    <Services />
+
+    <!-- Rincian Persewaan Alat & Furnitur Acara -->
+    <section class="py-14 sm:py-20 bg-ivory-100 border-b border-cream-200" id="persewaan">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="bg-white p-5 sm:p-12 rounded-lg sm:rounded-xs border border-cream-200 shadow-card">
+          <div class="max-w-3xl mb-8 sm:mb-10">
+            <span class="inline-block text-[11px] sm:text-xs font-bold tracking-[0.22em] uppercase text-champagne-600 mb-2">
+              Koleksi Peralatan Pesta
+            </span>
+            <h2 class="font-serif text-xl sm:text-3xl font-medium text-olive-900 mb-2 sm:mb-3">
+              Persewaan Perlengkapan Acara Berkualitas
+            </h2>
+            <p class="text-xs sm:text-sm text-olive-700 leading-relaxed font-light">
+              Tersedia persewaan perlengkapan pernikahan bagi calon pengantin mandiri maupun vendor rekanan dengan kondisi terawat dan pengantaran tepat waktu.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div class="p-5 sm:p-6 rounded-lg sm:rounded-xs bg-cream-50/70 border border-cream-200">
+              <h3 class="font-serif text-base sm:text-lg font-semibold text-olive-900 mb-1.5 sm:mb-2">Kursi Tiffany</h3>
+              <p class="text-xs text-olive-600 leading-relaxed font-light mb-3 sm:mb-4">
+                Pilihan warna putih mulus dan kayu natural, dilengkapi bantalan duduk empuk dan selendang pita.
+              </p>
+              <span class="text-[10px] sm:text-[11px] font-semibold text-sage-700 uppercase tracking-wider block">Kondisi Bersih & Terawat</span>
+            </div>
+
+            <div class="p-6 rounded-xs bg-cream-50/70 border border-cream-200">
+              <h3 class="font-serif text-lg font-semibold text-olive-900 mb-2">Set Meja Akad</h3>
+              <p class="text-xs text-olive-600 leading-relaxed font-light mb-4">
+                Meja kayu solid atau meja formal berbalut kain satin/sifon, cocok untuk prosesi ijab kabul khusyuk.
+              </p>
+              <span class="text-[11px] font-semibold text-sage-700 uppercase tracking-wider block">Termasuk Bunga Meja</span>
+            </div>
+
+            <div class="p-6 rounded-xs bg-cream-50/70 border border-cream-200">
+              <h3 class="font-serif text-lg font-semibold text-olive-900 mb-2">Karpet & Permadani</h3>
+              <p class="text-xs text-olive-600 leading-relaxed font-light mb-4">
+                Karpet jalan permadani motif klasik atau karpet polos warna merah, abu-abu, dan putih bersih.
+              </p>
+              <span class="text-[11px] font-semibold text-sage-700 uppercase tracking-wider block">Pilihan Lebar & Panjang</span>
+            </div>
+
+            <div class="p-6 rounded-xs bg-cream-50/70 border border-cream-200">
+              <h3 class="font-serif text-lg font-semibold text-olive-900 mb-2">Lighting & Spotlight</h3>
+              <p class="text-xs text-olive-600 leading-relaxed font-light mb-4">
+                Lampu parled warm white, spotlight pengantin terarah, serta lentera lilin kaca untuk suasana malam.
+              </p>
+              <span class="text-[11px] font-semibold text-sage-700 uppercase tracking-wider block">Instalasi Tim Profesional</span>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-8 border-t border-cream-200 flex flex-wrap items-center justify-between gap-4">
+            <span class="text-xs text-olive-600 italic">
+              *Ketersediaan unit perlengkapan disesuaikan dengan jadwal acara Anda di Madiun, Ponorogo, Magetan, dan Ngawi.
+            </span>
+            <a 
+              href="https://wa.me/6282330218310?text=Halo%20Nadia%20Dekorasi%20Madiun%2C%20saya%20ingin%20menanyakan%20ketersediaan%20persewaan%20perlengkapan%20pernikahan." 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BA59] text-white px-6 py-3 rounded-xs text-xs font-semibold tracking-wider uppercase transition-colors"
+            >
+              <MessageCircle class="w-4 h-4 text-white" />
+              <span>Tanyakan Ketersediaan Sewa via WA</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</BaseLayout>

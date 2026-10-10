@@ -1,0 +1,45 @@
+---
+// CTA.astro - Final Call to Action Section
+import { MessageCircle, Calendar } from 'lucide-astro';
+---
+
+<section class="py-14 sm:py-24 bg-olive-950 text-white relative overflow-hidden text-center">
+  <!-- Subtle Dot Grid Pattern -->
+  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#DFC475_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-8">
+    <span class="inline-block text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase text-champagne-300 mb-2 sm:mb-3">
+      Langkah Awal Hari Istimewa
+    </span>
+    <h2 class="font-serif text-2xl sm:text-5xl font-medium text-white mb-4 sm:mb-6 leading-tight">
+      Mari Rencanakan Dekorasi Hari Istimewa Anda
+    </h2>
+    <p class="text-xs sm:text-base text-stone-300/90 max-w-2xl mx-auto mb-8 sm:mb-10 font-light leading-relaxed">
+      Diskusikan konsep panggung, keselarasan warna, dan ketersediaan jadwal bersama tim Nadia Dekorasi. Konsultasi awal tanpa komitmen untuk wilayah Madiun Raya.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-md sm:max-w-none mx-auto w-full">
+      <a 
+        href="https://wa.me/6282330218310?text=Halo%20Nadia%20Dekorasi%20Madiun%2C%20saya%20ingin%20memulai%20konsultasi%20mengenai%20dekorasi%20hari%20istimewa%20kami." 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20BA59] active:bg-[#1E9E4B] text-white py-3.5 sm:py-4 px-6 sm:px-8 rounded-lg sm:rounded-xs text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-200 shadow-lg shadow-black/30 active:scale-[0.98]"
+      >
+        <MessageCircle class="w-4 h-4 text-white" />
+        <span>Mulai Konsultasi via WhatsApp</span>
+      </a>
+
+      <a 
+        href="#konsultasi" 
+        class="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 active:bg-white/30 text-white border border-white/30 backdrop-blur-sm py-3.5 sm:py-4 px-6 sm:px-8 rounded-lg sm:rounded-xs text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-200 active:scale-[0.98]"
+      >
+        <Calendar class="w-4 h-4 text-champagne-300" />
+        <span>Cek Tanggal Pernikahan</span>
+      </a>
+    </div>
+
+    <div class="text-[11px] sm:text-xs text-champagne-300/80 font-light">
+      WhatsApp: 0823-3021-8310 &bull; Instagram: @nadia_dekorasi.madiun
+    </div>
+  </div>
+</section>

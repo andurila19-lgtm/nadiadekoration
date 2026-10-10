@@ -1,0 +1,81 @@
+---
+// PackageCard.astro - Reusable card component for wedding packages
+import type { InspirationConcept } from '../data/packages';
+import { Check } from 'lucide-astro';
+
+interface Props {
+  pkg: InspirationConcept;
+}
+
+const { pkg } = Astro.props;
+---
+
+<div class={`bg-white rounded-lg sm:rounded-xs overflow-hidden border flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-hover relative ${
+  pkg.featured 
+    ? 'border-champagne-500 shadow-card ring-1 ring-champagne-500/30' 
+    : 'border-cream-200 hover:border-champagne-300 shadow-xs'
+}`}>
+  {pkg.badge && (
+    <div class="absolute top-3.5 right-3.5 z-10 bg-champagne-500 text-white text-[10px] sm:text-[11px] font-bold tracking-wider uppercase px-2.5 sm:px-3 py-1 rounded-full sm:rounded-xs shadow-sm flex items-center gap-1.5">
+      <span class="w-1.5 h-1.5 rounded-full bg-champagne-200"></span>
+      <span>{pkg.badge}</span>
+    </div>
+  )}
+
+  <!-- Package Image -->
+  <div class="relative h-48 sm:h-60 overflow-hidden bg-stone-100">
+    <img 
+      src={pkg.image} 
+      alt={`Inspirasi dekorasi ${pkg.name}`}
+      class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+      loading="lazy"
+      width="600"
+      height="400"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-olive-950/60 via-transparent to-transparent"></div>
+  </div>
+
+  <!-- Package Details -->
+  <div class="p-5 sm:p-8 flex flex-col flex-1">
+    <span class="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-champagne-600 mb-1">
+      {pkg.tierLabel}
+    </span>
+    <h3 class="font-serif text-xl sm:text-2xl font-semibold text-olive-900 mb-2 sm:mb-3">
+      {pkg.name}
+    </h3>
+    <p class="text-xs sm:text-sm text-olive-700 leading-relaxed mb-5 sm:mb-6 pb-5 sm:pb-6 border-b border-cream-200">
+      {pkg.summary}
+    </p>
+
+    <!-- Features List -->
+    <div class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-olive-900 mb-3">
+      Gambaran Kelengkapan:
+    </div>
+    <ul class="space-y-2.5 mb-6 sm:mb-8 flex-1">
+      {pkg.features.map((feature) => (
+        <li class="flex items-start gap-2.5 text-xs sm:text-sm text-olive-700 leading-snug">
+          <Check class="w-4 h-4 text-sage-600 flex-shrink-0 mt-0.5" />
+          <span>{feature}</span>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Footer Action: Comfortable Touch Target -->
+    <div class="pt-5 sm:pt-6 border-t border-cream-200 flex flex-col gap-2">
+      <button 
+        type="button" 
+        class={`btn-select-package w-full min-h-[48px] py-3.5 px-4 rounded-lg sm:rounded-xs text-xs font-semibold tracking-wider uppercase transition-all duration-200 active:scale-[0.98] text-center flex items-center justify-center ${
+          pkg.featured 
+            ? 'bg-champagne-500 hover:bg-champagne-600 active:bg-champagne-700 text-white shadow-sm' 
+            : 'border border-champagne-400/80 text-olive-900 hover:bg-champagne-50 active:bg-champagne-100'
+        }`}
+        data-package={pkg.name}
+      >
+        {pkg.ctaLabel}
+      </button>
+      <span class="text-[10px] sm:text-[11px] text-olive-600 text-center italic">
+        {pkg.note}
+      </span>
+    </div>
+  </div>
+</div>

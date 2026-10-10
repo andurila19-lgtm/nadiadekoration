@@ -1,0 +1,92 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalURL?: string;
+  image?: string;
+}
+
+const {
+  title = "Nadia Dekorasi Madiun | Dekorasi Pernikahan Custom",
+  description = "Vendor dekorasi pernikahan independen di Madiun Raya. Melayani dekorasi pelaminan modern & tradisional, akad nikah sakral, backdrop custom, pernikahan rumahan, dan sewa perlengkapan di Madiun, Ponorogo, Magetan, dan Ngawi.",
+  canonicalURL,
+  image = "/assets/images/hero_pelaminan.webp",
+} = Astro.props;
+
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content="Nadia Dekorasi Madiun, dekorasi pernikahan Madiun, sewa pelaminan Ponorogo, dekorasi akad Magetan, vendor wedding Ngawi, backdrop lamaran, sewa kursi tiffany Madiun" />
+  <meta name="author" content="Nadia Dekorasi Madiun" />
+  <meta name="robots" content="index, follow" />
+  
+  {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+
+  <!-- Open Graph / WhatsApp / Facebook Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:site_name" content="Nadia Dekorasi Madiun" />
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+
+  <!-- Preconnect & Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💐</text></svg>" />
+
+  <!-- LocalBusiness Schema for Google & AI Engines (SEO, AEO, GEO targeting Madiun Raya) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nadia Dekorasi Madiun",
+    "description": "Vendor dekorasi pernikahan, pelaminan, dekorasi akad, backdrop acara, dan persewaan perlengkapan pesta melayani wilayah Madiun, Ponorogo, Magetan, dan Ngawi.",
+    "telephone": "+6282330218310",
+    "url": "https://nadiadekorasi.com",
+    "sameAs": [
+      "https://www.instagram.com/nadia_dekorasi.madiun/"
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "Madiun" },
+      { "@type": "AdministrativeArea", "name": "Kabupaten Madiun" },
+      { "@type": "AdministrativeArea", "name": "Ponorogo" },
+      { "@type": "AdministrativeArea", "name": "Magetan" },
+      { "@type": "AdministrativeArea", "name": "Ngawi" }
+    ],
+    "priceRange": "$$",
+    "serviceType": [
+      "Dekorasi Pelaminan",
+      "Dekorasi Akad Nikah",
+      "Backdrop Lamaran & Photobooth",
+      "Dekorasi Pernikahan Rumahan",
+      "Persewaan Perlengkapan Pernikahan"
+    ]
+  }
+  </script>
+</head>
+<body class="bg-ivory-100 text-olive-900 font-sans antialiased selection:bg-champagne-300 selection:text-olive-950 flex flex-col min-h-screen">
+  <slot />
+
+  <!-- Minimal client-side JavaScript for interactive elements (Filter, Lightbox, Form WhatsApp, Mobile Drawer) -->
+  <script src="/scripts/main.js" is:inline></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+---
+// src/pages/inspirasi.astro - Halaman Konsep Inspirasi (Intimate, Elegant, Floral Signature)
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Packages from '../components/Packages.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import { inspirationConcepts } from '../data/packages';
+import { MessageCircle, Check, ArrowRight } from 'lucide-astro';
+---
+
+<BaseLayout 
+  title="Konsep Inspirasi Dekorasi | Nadia Dekorasi Madiun"
+  description="Jelajahi panduan inspirasi konsep dekorasi pernikahan Intimate Wedding, Elegant Wedding, dan Floral Signature di Madiun Raya. Fleksibel disesuaikan dengan venue dan preferensi tema."
+>
+  <Navbar />
+
+  <main id="main-content">
+    <!-- Header Banner Halaman -->
+    <section class="py-14 sm:py-20 bg-olive-950 text-white relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 text-center">
+        <span class="inline-block text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase text-champagne-300 mb-2 sm:mb-3">
+          Panduan Visual Fleksibel
+        </span>
+        <h1 class="font-serif text-2xl sm:text-5xl font-medium text-white mb-3 sm:mb-4">
+          Konsep Inspirasi Dekorasi Pernikahan
+        </h1>
+        <p class="text-xs sm:text-base text-stone-300 max-w-2xl mx-auto font-light leading-relaxed">
+          Tiga acuan tema visual: <em>Intimate Wedding</em>, <em>Elegant Wedding</em>, dan <em>Floral Signature</em>. Bukan paket harga kaku, melainkan titik awal eksplorasi konsep untuk disesuaikan secara personal dengan lokasi dan keinginan Anda.
+        </p>
+      </div>
+    </section>
+
+    <!-- Packages Component with Cards -->
+    <Packages />
+
+    <!-- Catatan Filosofi Penyesuaian Anggaran & Ruang -->
+    <section class="py-16 bg-ivory-100 border-b border-cream-200">
+      <div class="max-w-5xl mx-auto px-5 sm:px-8">
+        <div class="bg-cream-50 p-8 rounded-xs border border-cream-300 text-center">
+          <span class="text-xs font-bold uppercase tracking-widest text-champagne-600 block mb-2">
+            Fleksibilitas Tanpa Batas Kaku
+          </span>
+          <h3 class="font-serif text-2xl font-semibold text-olive-900 mb-3">
+            Mengapa Kami Tidak Menetapkan Harga Paten di Website?
+          </h3>
+          <p class="text-xs sm:text-sm text-olive-700 leading-relaxed font-light max-w-2xl mx-auto mb-6">
+            Setiap pernikahan memiliki dimensi panggung yang berbeda — baik panggung gedung 12 meter, pendopo tradisional Jawa, maupun halaman rumah bertenda. Kami mengutamakan perhitungan jujur yang disesuaikan dengan volume bunga, ukuran venue, dan jangkauan armada lokasi di Madiun, Ponorogo, Magetan, atau Ngawi.
+          </p>
+          <a 
+            href="/kontak" 
+            class="inline-flex items-center gap-2 bg-champagne-500 hover:bg-champagne-600 text-white px-7 py-3 rounded-xs text-xs font-semibold tracking-wider uppercase transition-colors"
+          >
+            <span>Konsultasikan Kebutuhan & Jadwal Acara</span>
+            <ArrowRight class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</BaseLayout>

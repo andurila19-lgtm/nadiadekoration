@@ -1,0 +1,68 @@
+---
+// Services.astro - 5 Layanan Dekorasi Pernikahan & Persewaan Perlengkapan
+import { servicesData } from '../data/services';
+import { ArrowRight } from 'lucide-astro';
+---
+
+<section class="py-14 sm:py-24 bg-cream-100/50 border-b border-cream-200" id="layanan">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+      <span class="inline-block text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase text-champagne-600 mb-2">
+        Layanan Komprehensif
+      </span>
+      <h2 class="font-serif text-2xl sm:text-4xl font-medium text-olive-900 mb-3 sm:mb-4">
+        Layanan Dekorasi & Perlengkapan
+      </h2>
+      <p class="text-xs sm:text-base text-olive-700 leading-relaxed font-light">
+        Dari panggung utama pelaminan hingga kelengkapan persewaan furnitur, kami menghadirkan layanan dekorasi pernikahan terkoordinasi untuk kelancaran hari bahagia Anda.
+      </p>
+      <div class="flex items-center justify-center gap-3 mt-4">
+        <div class="w-10 h-px bg-champagne-300"></div>
+        <div class="w-1.5 h-1.5 rotate-45 bg-champagne-500"></div>
+        <div class="w-10 h-px bg-champagne-300"></div>
+      </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6">
+      {servicesData.map((svc) => (
+        <div class={`bg-white rounded-lg sm:rounded-xs p-5 sm:p-8 border border-cream-200 hover:border-champagne-400 hover:shadow-hover transition-all duration-300 flex flex-col group ${svc.colSpanClass}`}>
+          <div class="flex items-center justify-between mb-3 sm:mb-4">
+            <span class="font-serif text-2xl sm:text-3xl text-cream-300 group-hover:text-champagne-500 font-light transition-colors">
+              {svc.number}
+            </span>
+            <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-cream-300 group-hover:border-champagne-500 flex items-center justify-center transition-colors">
+              <span class="w-1.5 h-1.5 rounded-full bg-champagne-600"></span>
+            </div>
+          </div>
+
+          <h3 class="font-serif text-lg sm:text-2xl font-semibold text-olive-900 mb-2 sm:mb-3 group-hover:text-champagne-700 transition-colors">
+            {svc.title}
+          </h3>
+
+          <p class="text-xs sm:text-sm text-olive-700 leading-relaxed mb-4 sm:mb-6 flex-1 font-light">
+            {svc.description}
+          </p>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-1 sm:gap-1.5 mb-4 sm:mb-6">
+            {svc.tags.map((tag) => (
+              <span class="text-[10px] sm:text-[11px] px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-sm bg-ivory-100 border border-cream-200 text-olive-700">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <!-- Action Link -->
+          <a 
+            href="#konsultasi" 
+            class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-champagne-600 group-hover:text-olive-900 transition-colors mt-auto pt-3 sm:pt-4 border-t border-cream-200"
+          >
+            <span>{svc.linkText}</span>
+            <ArrowRight class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

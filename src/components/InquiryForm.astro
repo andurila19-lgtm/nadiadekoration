@@ -1,0 +1,192 @@
+---
+// InquiryForm.astro - Formulir Cek Jadwal & Live WhatsApp Message Generator
+import { MessageCircle, Calendar, MapPin, Send, AlertCircle } from 'lucide-astro';
+---
+
+<section class="py-14 sm:py-24 bg-ivory-100 border-b border-cream-200" id="konsultasi">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+      <span class="inline-block text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase text-champagne-600 mb-2">
+        Pengecekan Jadwal & Konsultasi
+      </span>
+      <h2 class="font-serif text-2xl sm:text-4xl font-medium text-olive-900 mb-3 sm:mb-4">
+        Cek Ketersediaan Tanggal Acara
+      </h2>
+      <p class="text-xs sm:text-base text-olive-700 leading-relaxed font-light">
+        Pastikan tanggal istimewa Anda masih tersedia dalam jadwal kami. Isi data di bawah ini untuk menyusun format pesan konsultasi rapi yang langsung terhubung ke WhatsApp resmi Nadia Dekorasi.
+      </p>
+      <div class="flex items-center justify-center gap-3 mt-4">
+        <div class="w-10 h-px bg-champagne-300"></div>
+        <div class="w-1.5 h-1.5 rotate-45 bg-champagne-500"></div>
+        <div class="w-10 h-px bg-champagne-300"></div>
+      </div>
+    </div>
+
+    <!-- Container Card -->
+    <div class="bg-white rounded-xl sm:rounded-xs border border-cream-200 shadow-hover overflow-hidden max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12">
+        <!-- Input Form Pane -->
+        <div class="lg:col-span-7 p-5 sm:p-10">
+          <div class="mb-6 sm:mb-8">
+            <h3 class="font-serif text-xl sm:text-2xl font-semibold text-olive-900 mb-1">
+              Rincian Acara Calon Mempelai
+            </h3>
+            <p class="text-xs sm:text-sm text-olive-600 font-light">
+              Lengkapi formulir singkat ini agar tim kami dapat merespons dengan saran dekorasi yang akurat.
+            </p>
+          </div>
+
+          <form id="inquiryForm" class="space-y-4 sm:space-y-5" novalidate>
+            <!-- Nama Calon Mempelai -->
+            <div>
+              <label for="clientName" class="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-olive-900 mb-1.5">
+                Nama Calon Mempelai <span class="text-dustyRose-600">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="clientName" 
+                name="clientName" 
+                placeholder="Contoh: Rian & Amanda" 
+                required 
+                class="w-full px-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xs border border-cream-300 bg-ivory-50 text-olive-900 text-base sm:text-sm focus:outline-none focus:border-champagne-500 focus:bg-white focus:ring-1 focus:ring-champagne-500 transition-colors"
+              />
+            </div>
+
+            <!-- Tanggal & Lokasi -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="eventDate" class="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-olive-900 mb-1.5">
+                  Tanggal Acara <span class="text-dustyRose-600">*</span>
+                </label>
+                <div class="relative">
+                  <input 
+                    type="date" 
+                    id="eventDate" 
+                    name="eventDate" 
+                    required 
+                    class="w-full px-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xs border border-cream-300 bg-ivory-50 text-olive-900 text-base sm:text-sm focus:outline-none focus:border-champagne-500 focus:bg-white focus:ring-1 focus:ring-champagne-500 transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="eventLocation" class="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-olive-900 mb-1.5">
+                  Wilayah / Kota Acara <span class="text-dustyRose-600">*</span>
+                </label>
+                <select 
+                  id="eventLocation" 
+                  name="eventLocation" 
+                  required 
+                  class="w-full px-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xs border border-cream-300 bg-ivory-50 text-olive-900 text-base sm:text-sm focus:outline-none focus:border-champagne-500 focus:bg-white focus:ring-1 focus:ring-champagne-500 transition-colors"
+                >
+                  <option value="" disabled selected>Pilih Wilayah</option>
+                  <option value="Kota Madiun">Kota Madiun</option>
+                  <option value="Kabupaten Madiun">Kabupaten Madiun</option>
+                  <option value="Ponorogo">Ponorogo</option>
+                  <option value="Magetan">Magetan</option>
+                  <option value="Ngawi">Ngawi</option>
+                  <option value="Wilayah Sekitar Lainnya">Wilayah Sekitar Lainnya</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Jenis Dekorasi -->
+            <div>
+              <label for="decorType" class="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-olive-900 mb-1.5">
+                Jenis Dekorasi / Layanan <span class="text-dustyRose-600">*</span>
+              </label>
+              <select 
+                id="decorType" 
+                name="decorType" 
+                required 
+                class="w-full px-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xs border border-cream-300 bg-ivory-50 text-olive-900 text-base sm:text-sm focus:outline-none focus:border-champagne-500 focus:bg-white focus:ring-1 focus:ring-champagne-500 transition-colors"
+              >
+                <option value="" disabled selected>Pilih Layanan yang Diminati</option>
+                <option value="Paket Intimate Wedding">Paket Intimate Wedding (Akad & Resepsi Intim)</option>
+                <option value="Paket Elegant Wedding">Paket Elegant Wedding (Panggung Gedung / Rumah Luas)</option>
+                <option value="Paket Signature Wedding">Paket Signature Wedding (Custom Dimensional Mewah)</option>
+                <option value="Dekorasi Pelaminan Saja">Dekorasi Pelaminan Saja</option>
+                <option value="Dekorasi Meja Akad Nikah">Dekorasi Meja Akad Nikah Saja</option>
+                <option value="Backdrop Lamaran / Photobooth">Backdrop Lamaran / Photobooth</option>
+                <option value="Dekorasi Pernikahan Rumahan">Dekorasi Pernikahan Rumahan (Tenda / Halaman)</option>
+                <option value="Persewaan Perlengkapan Acara">Persewaan Perlengkapan Acara Saja</option>
+                <option value="Konsultasi Desain Custom Lainnya">Konsultasi Desain Custom Lainnya</option>
+              </select>
+            </div>
+
+            <!-- Catatan Opsional -->
+            <div>
+              <label for="clientNotes" class="block text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-olive-900 mb-1.5">
+                Catatan Tambahan (Opsional)
+              </label>
+              <textarea 
+                id="clientNotes" 
+                name="clientNotes" 
+                rows="3" 
+                placeholder="Contoh: Tema warna dominan sage & ivory, lokasi di gedung serbaguna..."
+                class="w-full px-4 py-3 sm:py-3.5 rounded-lg sm:rounded-xs border border-cream-300 bg-ivory-50 text-olive-900 text-base sm:text-sm focus:outline-none focus:border-champagne-500 focus:bg-white focus:ring-1 focus:ring-champagne-500 transition-colors resize-y"
+              ></textarea>
+            </div>
+
+            <!-- Explicit Notice -->
+            <div class="p-3.5 bg-sage-50 border-l-4 border-sage-600 rounded-lg sm:rounded-xs text-xs text-sage-800 leading-relaxed flex items-start gap-2.5">
+              <AlertCircle class="w-4 h-4 text-sage-700 flex-shrink-0 mt-0.5" />
+              <div>
+                <strong class="font-semibold block mb-0.5">Pemberitahuan Pengecekan Jadwal:</strong>
+                Pengisian formulir ini adalah permohonan pengecekan ketersediaan tanggal dan konsultasi langsung via WhatsApp resmi Nadia Dekorasi, bukan konfirmasi pemesanan otomatis.
+              </div>
+            </div>
+
+            <!-- Submit Button with 48px+ touch target -->
+            <button 
+              type="submit" 
+              id="submitInquiryBtn"
+              class="w-full min-h-[50px] inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20BA59] active:bg-[#1E9E4B] text-white py-3.5 sm:py-4 px-6 rounded-lg sm:rounded-xs text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-200 shadow-md active:scale-[0.98]"
+            >
+              <MessageCircle class="w-4 h-4 text-white" />
+              <span>Kirim Permohonan ke WhatsApp</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- WhatsApp Live Preview Pane -->
+        <div class="lg:col-span-5 bg-olive-950 text-white p-5 sm:p-10 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-white/10">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-2 h-2 rounded-full bg-[#25D366]"></span>
+              <span class="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-champagne-300">
+                Pratinjau Pesan Langsung
+              </span>
+            </div>
+            <h4 class="font-serif text-lg sm:text-xl font-medium text-white mb-2">
+              Format Konsultasi WhatsApp
+            </h4>
+            <p class="text-xs text-stone-300/80 mb-5 leading-relaxed font-light">
+              Teks berikut akan otomatis tersusun rapi dan terisi di obrolan WhatsApp saat tombol kirim diklik.
+            </p>
+
+            <!-- Mock Chat Bubble -->
+            <div class="bg-[#0B141A] rounded-lg sm:rounded-xs p-3.5 sm:p-4 shadow-inner border border-white/5">
+              <div class="bg-[#005C4B] text-[#E9EDEF] rounded-t-md rounded-bl-md p-3.5 text-xs leading-relaxed font-sans shadow-sm whitespace-pre-wrap word-break">
+                <span id="waBubblePreview">Menyiapkan format pesan konsultasi...</span>
+                <span class="block text-right text-[10px] text-[#8696A0] mt-2" id="waBubbleTime">10:00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Profile Card -->
+          <div class="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-white/10 flex items-center gap-3">
+            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-champagne-500 text-white flex items-center justify-center font-serif font-bold text-sm flex-shrink-0">
+              ND
+            </div>
+            <div>
+              <div class="text-xs font-semibold text-white">Nadia Dekorasi Madiun</div>
+              <div class="text-[11px] text-stone-300">WhatsApp: 0823-3021-8310</div>
+              <div class="text-[10px] text-champagne-300">Madiun • Ponorogo • Magetan • Ngawi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

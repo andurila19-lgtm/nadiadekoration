@@ -1,0 +1,53 @@
+---
+// src/pages/galeri.astro - Halaman Galeri Portofolio & Konsep Lengkap
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Gallery from '../components/Gallery.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+---
+
+<BaseLayout 
+  title="Galeri Konsep Dekorasi | Nadia Dekorasi Madiun"
+  description="Koleksi kurasi inspirasi dekorasi panggung pelaminan, meja akad nikah sakral, backdrop lamaran & photobooth, serta pernikahan intim di Madiun, Ponorogo, Magetan, dan Ngawi."
+>
+  <Navbar />
+
+  <main id="main-content">
+    <!-- Header Banner Halaman -->
+    <section class="py-14 sm:py-20 bg-olive-950 text-white relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 text-center">
+        <span class="inline-block text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase text-champagne-300 mb-2 sm:mb-3">
+          Galeri Visual
+        </span>
+        <h1 class="font-serif text-2xl sm:text-5xl font-medium text-white mb-3 sm:mb-4">
+          Galeri Inspirasi & Konsep Dekorasi
+        </h1>
+        <p class="text-xs sm:text-base text-stone-300 max-w-2xl mx-auto font-light leading-relaxed">
+          Telusuri ragam inspirasi penataan panggung pelaminan modern, sudut prosesi akad nikah yang sakral, backdrop pertunangan, serta suasana jamuan intim.
+        </p>
+      </div>
+    </section>
+
+    <!-- Galeri Interaktif Lengkap dengan Filter & Lightbox -->
+    <Gallery />
+
+    <!-- Catatan Etika Penggunaan Foto Demo -->
+    <section class="py-12 bg-ivory-100 border-b border-cream-200">
+      <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center text-xs text-olive-600 leading-relaxed">
+        <p class="font-medium text-olive-800 mb-1">
+          Pemberitahuan Transparansi Portofolio:
+        </p>
+        <p>
+          Foto-foto yang ditampilkan pada galeri di atas disajikan sebagai demonstrasi visual konsep estetika untuk calon pengantin. Nadia Dekorasi Madiun siap mewujudkan tata panggung dengan preferensi visual serupa atau mengembangkan rancangan custom baru sesuai venue Anda di Madiun Raya.
+        </p>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</BaseLayout>

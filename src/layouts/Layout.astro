@@ -1,0 +1,72 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Nadia Dekorasi Madiun — Vendor Dekorasi Pernikahan & Persewaan Perlengkapan",
+  description = "Nadia Dekorasi Madiun melayani dekorasi pelaminan modern, dekorasi akad nikah sakral, backdrop lamaran, pernikahan rumahan, dan sewa perlengkapan wedding untuk area Madiun, Ponorogo, Magetan, dan Ngawi."
+} = Astro.props;
+
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content="dekorasi madiun, wedding decoration madiun, sewa dekorasi madiun, pelaminan madiun, dekorasi ponorogo, dekorasi magetan, dekorasi ngawi, dekorasi akad nikah, backdrop lamaran madiun" />
+  <meta name="author" content="Nadia Dekorasi Madiun" />
+
+  <!-- Open Graph / WhatsApp / Social Share -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="/assets/images/hero_pelaminan.jpg" />
+
+  <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD LocalBusiness Schema untuk SEO & GEO Targeting Madiun Raya -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nadia Dekorasi Madiun",
+    "description": "Jasa dekorasi pernikahan, pelaminan, dekorasi akad, backdrop acara, dan persewaan peralatan pesta melayani wilayah Madiun, Ponorogo, Magetan, dan Ngawi.",
+    "telephone": "+6282330218310",
+    "sameAs": [
+      "https://www.instagram.com/nadia_dekorasi.madiun/"
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "Madiun" },
+      { "@type": "AdministrativeArea", "name": "Kabupaten Madiun" },
+      { "@type": "AdministrativeArea", "name": "Ponorogo" },
+      { "@type": "AdministrativeArea", "name": "Magetan" },
+      { "@type": "AdministrativeArea", "name": "Ngawi" }
+    ],
+    "serviceType": [
+      "Dekorasi Pelaminan",
+      "Dekorasi Akad Nikah",
+      "Backdrop Lamaran & Photobooth",
+      "Dekorasi Pernikahan Rumahan",
+      "Persewaan Perlengkapan Pernikahan"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <slot />
+
+  <!-- Global Client Script -->
+  <script src="/scripts/main.js" is:inline></script>
+</body>
+</html>

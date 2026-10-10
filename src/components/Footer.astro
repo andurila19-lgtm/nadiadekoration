@@ -1,0 +1,136 @@
+---
+// Footer.astro - Footer lengkap dengan profil brand, link Instagram, WhatsApp, dan wilayah layanan
+import { MessageCircle, Instagram, MapPin, ChevronRight } from 'lucide-astro';
+import { businessNavigation } from '../data/business';
+---
+
+<footer class="bg-[#121811] text-stone-300 pt-12 pb-10 sm:pt-16 sm:pb-12 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-10 sm:pb-14 border-b border-white/10">
+      <!-- Kolom 1: Profil Brand (5 cols) -->
+      <div class="lg:col-span-5">
+        <a href="/" class="block">
+          <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-white uppercase block leading-none mb-1">
+            NADIA DEKORASI
+          </span>
+          <span class="text-[9px] sm:text-[10px] tracking-[0.22em] uppercase text-champagne-300 font-semibold block mb-3 sm:mb-4">
+            WEDDING DECORATION & RENTAL • MADIUN RAYA
+          </span>
+        </a>
+        <p class="text-xs sm:text-sm text-stone-400 leading-relaxed font-light mb-5 sm:mb-6 max-w-sm">
+          Vendor penyedia jasa dekorasi pernikahan mandiri dan persewaan perlengkapan acara di Madiun, Ponorogo, Magetan, dan Ngawi. Mengedepankan konsep personal dan ketelitian detail.
+        </p>
+
+        <div class="inline-flex items-center gap-2 text-xs text-champagne-300">
+          <Instagram class="w-4 h-4 text-champagne-300" />
+          <span>Instagram:</span>
+          <a 
+            href="https://www.instagram.com/nadia_dekorasi.madiun/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="text-white hover:text-champagne-200 underline underline-offset-4"
+          >
+            @nadia_dekorasi.madiun
+          </a>
+        </div>
+      </div>
+
+      <!-- Kolom 2: Navigasi Cepat (2 cols) -->
+      <div class="lg:col-span-2">
+        <h3 class="font-serif text-sm sm:text-base text-white font-medium mb-3 sm:mb-4 pb-2 border-b border-champagne-500/40 inline-block">
+          Halaman
+        </h3>
+        <ul class="space-y-2 text-xs text-stone-400">
+          {businessNavigation.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-champagne-300 transition-colors flex items-center gap-1.5 py-1">
+                <ChevronRight class="w-3 h-3 text-champagne-500" /> {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Kolom 3: Layanan Dekorasi (2 cols) -->
+      <div class="lg:col-span-2">
+        <h3 class="font-serif text-sm sm:text-base text-white font-medium mb-3 sm:mb-4 pb-2 border-b border-champagne-500/40 inline-block">
+          Layanan
+        </h3>
+        <ul class="space-y-2 text-xs text-stone-400">
+          <li>
+            <a href="/layanan#pelaminan" class="hover:text-champagne-300 transition-colors block py-1">Dekorasi Pelaminan</a>
+          </li>
+          <li>
+            <a href="/layanan#akad" class="hover:text-champagne-300 transition-colors block py-1">Dekorasi Akad Nikah</a>
+          </li>
+          <li>
+            <a href="/layanan#backdrop" class="hover:text-champagne-300 transition-colors block py-1">Backdrop & Photobooth</a>
+          </li>
+          <li>
+            <a href="/layanan#rumah" class="hover:text-champagne-300 transition-colors block py-1">Dekorasi Tenda Rumah</a>
+          </li>
+          <li>
+            <a href="/layanan#persewaan" class="hover:text-champagne-300 transition-colors block py-1">Sewa Kursi Tiffany & Alat</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Kolom 4: Kontak & Wilayah (3 cols) -->
+      <div class="lg:col-span-3">
+        <h3 class="font-serif text-sm sm:text-base text-white font-medium mb-3 sm:mb-4 pb-2 border-b border-champagne-500/40 inline-block">
+          Kontak & Wilayah
+        </h3>
+        
+        <div class="space-y-3 text-xs">
+          <div class="flex items-start gap-2.5">
+            <MessageCircle class="w-4 h-4 text-[#25D366] flex-shrink-0 mt-0.5" />
+            <div>
+              <div class="text-[10px] text-stone-400 uppercase tracking-wider">WhatsApp Konsultasi:</div>
+              <a 
+                href="https://wa.me/6282330218310" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-white hover:text-champagne-300 font-semibold"
+              >
+                0823-3021-8310
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2.5">
+            <Instagram class="w-4 h-4 text-dustyRose-400 flex-shrink-0 mt-0.5" />
+            <div>
+              <div class="text-[10px] text-stone-400 uppercase tracking-wider">Instagram Resmi:</div>
+              <a 
+                href="https://www.instagram.com/nadia_dekorasi.madiun/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-white hover:text-champagne-300"
+              >
+                @nadia_dekorasi.madiun
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2.5">
+            <MapPin class="w-4 h-4 text-champagne-300 flex-shrink-0 mt-0.5" />
+            <div>
+              <div class="text-[10px] text-stone-400 uppercase tracking-wider">Wilayah Layanan:</div>
+              <span class="text-white">Madiun, Ponorogo, Magetan, Ngawi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Disclaimer & Copyright -->
+    <div class="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-stone-500 text-center sm:text-left">
+      <div>
+        &copy; 2026 Nadia Dekorasi Madiun. Hak Cipta Dilindungi.
+      </div>
+      <div class="text-[10px] sm:text-[11px] max-w-xl text-center md:text-right leading-relaxed text-stone-500">
+        *Website ini dirancang sebagai pratinjau konsep independen untuk memperagakan kehadiran web resmi Nadia Dekorasi Madiun.
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,119 @@
+---
+// src/pages/kontak.astro - Halaman Cek Tanggal & Kontak WhatsApp
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import InquiryForm from '../components/InquiryForm.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import { businessProfile } from '../data/business';
+import { MessageCircle, Instagram, MapPin, Clock, AlertCircle } from 'lucide-astro';
+---
+
+<BaseLayout 
+  title="Cek Tanggal & Kontak | Nadia Dekorasi Madiun"
+  description="Periksa ketersediaan tanggal pernikahan Anda dan konsultasikan rancangan dekorasi langsung ke WhatsApp resmi Nadia Dekorasi Madiun (0823-3021-8310)."
+>
+  <Navbar />
+
+  <main id="main-content">
+    <!-- Header Banner Halaman -->
+    <section class="py-14 sm:py-20 bg-olive-950 text-white relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 text-center">
+        <span class="inline-block text-[11px] sm:text-xs font-bold tracking-[0.24em] uppercase text-champagne-300 mb-2 sm:mb-3">
+          Konsultasi Mudah & Cepat
+        </span>
+        <h1 class="font-serif text-2xl sm:text-5xl font-medium text-white mb-3 sm:mb-4">
+          Cek Tanggal & Konsultasi Dekorasi
+        </h1>
+        <p class="text-xs sm:text-base text-stone-300 max-w-2xl mx-auto font-light leading-relaxed">
+          Kirimkan rencana tanggal dan lokasi perhelatan Anda. Formulir di bawah ini akan menyusun format pesan rapi yang terhubung langsung ke WhatsApp resmi kami.
+        </p>
+      </div>
+    </section>
+
+    <!-- Kontak Singkat Bar -->
+    <section class="py-6 sm:py-8 bg-cream-100/70 border-b border-cream-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-6 text-xs text-olive-800">
+          <div class="flex items-center gap-3 bg-white p-3.5 sm:p-4 rounded-lg sm:rounded-xs border border-cream-200">
+            <div class="p-2 sm:p-2.5 rounded-full bg-emerald-50 text-emerald-600">
+              <MessageCircle class="w-4 h-4" />
+            </div>
+            <div>
+              <div class="text-[10px] uppercase font-bold text-olive-600">WhatsApp Resmi</div>
+              <a href={businessProfile.whatsappUrl} target="_blank" rel="noopener noreferrer" class="font-semibold text-olive-900 text-sm hover:underline">
+                {businessProfile.whatsappFormatted}
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 bg-white p-3.5 sm:p-4 rounded-lg sm:rounded-xs border border-cream-200">
+            <div class="p-2 sm:p-2.5 rounded-full bg-rose-50 text-dustyRose-600">
+              <Instagram class="w-4 h-4" />
+            </div>
+            <div>
+              <div class="text-[10px] uppercase font-bold text-olive-600">Instagram Resmi</div>
+              <a href={businessProfile.instagramUrl} target="_blank" rel="noopener noreferrer" class="font-semibold text-olive-900 text-sm hover:underline">
+                {businessProfile.instagramHandle}
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 bg-white p-3.5 sm:p-4 rounded-lg sm:rounded-xs border border-cream-200">
+            <div class="p-2 sm:p-2.5 rounded-full bg-champagne-100 text-champagne-700">
+              <MapPin class="w-4 h-4" />
+            </div>
+            <div>
+              <div class="text-[10px] uppercase font-bold text-olive-600">Wilayah Layanan</div>
+              <span class="font-semibold text-olive-900 text-xs">Madiun, Ponorogo, Magetan, Ngawi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulir Cek Jadwal Utama -->
+    <InquiryForm />
+
+    <!-- FAQ Singkat Pemesanan Jadwal -->
+    <section class="py-16 bg-ivory-100 border-b border-cream-200">
+      <div class="max-w-4xl mx-auto px-5 sm:px-8">
+        <h3 class="font-serif text-2xl font-semibold text-olive-900 text-center mb-8">
+          Pertanyaan Umum Konsultasi
+        </h3>
+
+        <div class="space-y-4">
+          <div class="bg-white p-6 rounded-xs border border-cream-200">
+            <h4 class="font-semibold text-sm text-olive-900 mb-1.5">
+              Apakah pengisian formulir ini langsung mengonfirmasi booking?
+            </h4>
+            <p class="text-xs sm:text-sm text-olive-700 leading-relaxed font-light">
+              Tidak. Formulir ini berfungsi sebagai permohonan pengecekan jadwal ketersediaan dan titik awal konsultasi langsung ke WhatsApp. Konfirmasi booking resmi baru terlaksana setelah disepakati detail rancangan dan jadwal antara kedua belah pihak.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xs border border-cream-200">
+            <h4 class="font-semibold text-sm text-olive-900 mb-1.5">
+              Apakah bisa konsultasi dengan membawa foto referensi sendiri?
+            </h4>
+            <p class="text-xs sm:text-sm text-olive-700 leading-relaxed font-light">
+              Tentu saja. Anda sangat dipersilakan mengirimkan foto referensi warna, bunga, atau tata panggung impian yang Anda sukai langsung ke obrolan WhatsApp kami untuk dipelajari kesesuaiannya dengan venue acara Anda.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xs border border-cream-200">
+            <h4 class="font-semibold text-sm text-olive-900 mb-1.5">
+              Berapa lama estimasi respon pesan WhatsApp?
+            </h4>
+            <p class="text-xs sm:text-sm text-olive-700 leading-relaxed font-light">
+              Sebagaimana komitmen bio kami, kami berupaya memberikan fast respon pada jam-jam aktif untuk mendiskusikan ketersediaan tanggal pernikahan Anda.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</BaseLayout>

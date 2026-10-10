@@ -1,0 +1,104 @@
+---
+// Intro.astro - Pengenalan bisnis berfokus pada konsep personal, perhatian pada detail, dan kejujuran narasi
+import { Palette, Home, Eye, MapPin } from 'lucide-astro';
+---
+
+<section class="py-14 sm:py-24 bg-ivory-100 border-b border-cream-200" id="tentang">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <!-- Kolom Teks Narasi -->
+      <div class="lg:col-span-7">
+        <div class="inline-block text-[11px] sm:text-xs font-bold tracking-[0.22em] uppercase text-champagne-600 mb-2 sm:mb-3">
+          Tentang Nadia Dekorasi
+        </div>
+        <h2 class="font-serif text-2xl sm:text-4xl text-olive-900 leading-snug font-medium mb-5 sm:mb-6">
+          Setiap perayaan memiliki cerita istimewa. Kami menerjemahkannya dalam <span class="italic font-normal text-sage-700">keindahan dekorasi</span> yang berkarakter.
+        </h2>
+        
+        <div class="space-y-3.5 sm:space-y-4 text-olive-700 leading-relaxed text-sm sm:text-base font-light">
+          <p>
+            Nadia Dekorasi Madiun adalah penyedia jasa dekorasi pernikahan mandiri dan persewaan perlengkapan acara yang berbasis di Madiun. Kami hadir untuk mendampingi calon mempelai mewujudkan tata panggung dan ruang pernikahan di seluruh wilayah Karesidenan Madiun, meliputi Kota Madiun, Kabupaten Madiun, Ponorogo, Magetan, hingga Ngawi.
+          </p>
+          <p>
+            Kami percaya bahwa dekorasi terbaik lahir dari komunikasi yang jujur dan pemahaman atas keinginan Anda. Dari eksplorasi referensi warna, pemilihan bunga, hingga keselarasan tata cahaya, seluruh elemen kami rancang agar menyatu harmonis dengan karakter acara Anda.
+          </p>
+        </div>
+
+        <!-- 4 Pilar Nilai Layanan: Clean cards on mobile -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-5 mt-6 sm:mt-8 pt-6 border-t border-cream-200">
+          <div class="p-3.5 sm:p-4 rounded-lg bg-cream-50/70 border border-cream-200/70 flex items-start gap-3">
+            <div class="p-2 rounded-md bg-sage-100 text-sage-700 flex-shrink-0 mt-0.5">
+              <Palette class="w-4 h-4" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-xs sm:text-sm text-olive-900 mb-0.5">Konsep Personal & Custom</h3>
+              <p class="text-[11px] sm:text-xs text-olive-600 leading-relaxed">
+                Eksplorasi referensi tema dan palet warna sesuai kepribadian pasangan mempelai.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3.5 sm:p-4 rounded-lg bg-cream-50/70 border border-cream-200/70 flex items-start gap-3">
+            <div class="p-2 rounded-md bg-sage-100 text-sage-700 flex-shrink-0 mt-0.5">
+              <Home class="w-4 h-4" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-xs sm:text-sm text-olive-900 mb-0.5">Fleksibilitas Venue</h3>
+              <p class="text-[11px] sm:text-xs text-olive-600 leading-relaxed">
+                Penyesuaian tata panggung untuk gedung serbaguna maupun tenda di kediaman rumah.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3.5 sm:p-4 rounded-lg bg-cream-50/70 border border-cream-200/70 flex items-start gap-3">
+            <div class="p-2 rounded-md bg-sage-100 text-sage-700 flex-shrink-0 mt-0.5">
+              <Eye class="w-4 h-4" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-xs sm:text-sm text-olive-900 mb-0.5">Perhatian pada Detail</h3>
+              <p class="text-[11px] sm:text-xs text-olive-600 leading-relaxed">
+                Ketelitian rangkaian bunga, aksesoris, dan tata pencahayaan yang berimbang.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3.5 sm:p-4 rounded-lg bg-cream-50/70 border border-cream-200/70 flex items-start gap-3">
+            <div class="p-2 rounded-md bg-sage-100 text-sage-700 flex-shrink-0 mt-0.5">
+              <MapPin class="w-4 h-4" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-xs sm:text-sm text-olive-900 mb-0.5">Jangkauan Regional</h3>
+              <p class="text-[11px] sm:text-xs text-olive-600 leading-relaxed">
+                Kesiapan tim untuk instalasi dan koordinasi di Madiun, Ponorogo, Magetan, dan Ngawi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kolom Foto Kurasi & Frame Estetik -->
+      <div class="lg:col-span-5 relative mt-4 lg:mt-0">
+        <div class="relative rounded-lg sm:rounded-xs overflow-hidden shadow-elevated border border-cream-300">
+          <img 
+            src="/assets/images/akad_nikah.webp" 
+            alt="Suasana dekorasi akad nikah khidmat Nadia Dekorasi Madiun" 
+            class="w-full h-72 sm:h-[460px] object-cover transition-transform duration-700 hover:scale-105" 
+            loading="lazy"
+            width="800"
+            height="1000"
+          />
+        </div>
+
+        <!-- Kartu Aksen Floating -->
+        <div class="mt-3 sm:mt-0 sm:absolute sm:-bottom-6 sm:-left-6 bg-white p-4 sm:p-6 rounded-lg sm:rounded-xs shadow-card border-l-4 border-champagne-500 border border-cream-200 max-w-xs">
+          <div class="font-serif text-sm sm:text-base font-bold text-olive-900 mb-1">
+            Harmoni & Ketulusan
+          </div>
+          <p class="text-[11px] sm:text-xs text-olive-700 leading-relaxed">
+            Menemani setiap detik ikrar suci hingga sambutan hangat bagi para kerabat dan keluarga terkasih.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
